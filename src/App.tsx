@@ -1,26 +1,24 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Create from './components/create-account';
+import Delete from './components/delete-account';
+import 'bootstrap-icons/font/bootstrap-icons.css';
 
-function App() {
+const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    // Main container with flex layout
+    <div className="h-screen flex flex-col lg:flex-row" style={{ backgroundImage: 'url("background-app.jpg")', backgroundRepeat: 'repeat', backgroundSize: 'cover', backgroundAttachment: 'fixed' }}>
+      {/* First column for Create component */}
+      <div className="flex-1 flex justify-center items-center p-4">
+        <Create />
+      </div>
+      {/* Second column for Delete component */}
+      <div className="flex-1 flex justify-center items-center p-4">
+        <Delete />
+      </div>
     </div>
   );
 }
 
+// Exporting the App component as default
 export default App;
